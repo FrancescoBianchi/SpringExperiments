@@ -25,9 +25,6 @@ public class ImageGalleryController {
 	@Autowired
 	ImageGalleryService imageGalleryService;
 	
-    Map<Long, ImageGalleryFile> files = new HashMap<Long, ImageGalleryFile>();
-    Long counter = 0L;
-    
     @RequestMapping(value="/upload", method = RequestMethod.POST, consumes = {"multipart/form-data"})
     public @ResponseBody ResponseEntity<?> upload(MultipartFile file,
     		@RequestParam(value = "useFilenameAsDefault") Boolean useFilenameAsDefault,
@@ -36,8 +33,6 @@ public class ImageGalleryController {
     	ImageGalleryFile imageGalleryFile = null; 
     	
 		imageGalleryFile = new ImageGalleryFile();
-		counter++;
-		imageGalleryFile.setId(counter);
 		imageGalleryFile.setFileName(file.getOriginalFilename());
         imageGalleryFile.setFileSize(file.getSize());
         imageGalleryFile.setImageFormat(file.getContentType());

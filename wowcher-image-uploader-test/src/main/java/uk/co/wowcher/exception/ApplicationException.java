@@ -1,5 +1,10 @@
 package uk.co.wowcher.exception;
 
+/**
+ * The root exception for all the exceptions that the application can manage safely.
+ * 
+ * @author fracesco.bianchi
+ */
 public class ApplicationException extends Exception {
 
 	/**

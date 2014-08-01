@@ -15,6 +15,11 @@ import uk.co.wowcher.model.ImageGalleryFile;
 import uk.co.wowcher.service.ImageGalleryService;
 
 
+/**
+ * The controller exposing the APIs to deal with a User Image Gallery and its contents 
+ * 
+ * @author francesco.bianchi
+ */
 @Controller
 @RequestMapping("imageGallery")
 public class ImageGalleryController {
@@ -22,11 +27,22 @@ public class ImageGalleryController {
 	@Autowired
 	ImageGalleryService imageGalleryService;
 	
+  /**
+   * Uploads a file to the Image Gallery of the current User 
+   * 
+   * URL: /api/imageGallery/upload
+   * @param file the file the must be added to the current user Image Gallery
+   * @param useFilenameAsDefault tells if the name of the file must be used as altTag and caption or not
+   * @param altTag the value to use as an altTag when the image is rendered
+   * @param caption the value to use as an altTag when the image is rendered
+   * @return an answer in JSON contaning the data of the uploaded file, if possible
+   */
     @RequestMapping(value="/upload", method = RequestMethod.POST, consumes = {"multipart/form-data"})
     public @ResponseBody ResponseEntity<?> upload(MultipartFile file,
     		@RequestParam(value = "useFilenameAsDefault") Boolean useFilenameAsDefault,
     		@RequestParam(value = "altTag") String altTag,
     		@RequestParam(value = "caption") String caption) {
+    	
     	ImageGalleryFile imageGalleryFile = new ImageGalleryFile();
 		imageGalleryFile.setFileName(file.getOriginalFilename());
         imageGalleryFile.setFileSize(file.getSize());

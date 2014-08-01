@@ -30,8 +30,8 @@
 		<div class="row select-file-area">
 
 
-			<h3>Select the file(s) that you want to add to your gallery</h3>
-			<span class="highlight">You can change the list of selected files before they are uploaded</span>
+			<h3>Select the image(s) that you want to add to your gallery</h3>
+			<span class="highlight">You can change the list of selected images before they are uploaded</span>
 
 			<div class="row well lead select-file-area-content">
 				<div class="col-md-5 select-file-area-component">

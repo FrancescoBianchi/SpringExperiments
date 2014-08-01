@@ -5,8 +5,8 @@
 <title>Image Gallery Uploader</title>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="app/css/bootstrap-wowcher.css" />
-<link rel="stylesheet" href="app/css/main.css" />
+<link rel="stylesheet" href="resources/app/css/bootstrap-wowcher.css" />
+<link rel="stylesheet" href="resources/app/css/main.css" />
     
 <!-- Fix for old browsers -->
 <script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
@@ -17,8 +17,8 @@
 
 <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
 <script src="lib/js/angular-file-upload/angular-file-upload.js"></script>
-<script src="app/js/controllers.js"></script>
-<script src="app/js/directives.js"></script>
+<script src="resources/app/js/controllers.js"></script>
+<script src="resources/app/js/directives.js"></script>
 
 </head>
 

@@ -21,8 +21,7 @@ public class WebInitializer implements WebApplicationInitializer {
 
 		ctx.setServletContext(servletContext);
 
-		Dynamic apiServlet = servletContext.addServlet("api",
-				new DispatcherServlet(ctx));
+		Dynamic apiServlet = servletContext.addServlet("api", new DispatcherServlet(ctx));
 		apiServlet.addMapping("/api/*");
 		apiServlet.setMultipartConfig(new MultipartConfigElement(null, maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2));
 	}

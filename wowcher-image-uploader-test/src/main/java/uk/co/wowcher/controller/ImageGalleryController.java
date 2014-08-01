@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,12 +14,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import uk.co.wowcher.model.ImageGalleryFile;
+import uk.co.wowcher.service.ImageGalleryService;
 
 
 @Controller
 @RequestMapping("imageGallery")
 public class ImageGalleryController {
 
+	@Autowired
+	ImageGalleryService imageGalleryService;
+	
     Map<Long, ImageGalleryFile> files = new HashMap<Long, ImageGalleryFile>();
     Long counter = 0L;
     
@@ -30,23 +35,18 @@ public class ImageGalleryController {
 			HttpServletResponse response) {
     	ImageGalleryFile imageGalleryFile = null; 
     	
-    	if (!file.isEmpty()) {
-    		imageGalleryFile = new ImageGalleryFile();
-    		counter++;
-    		imageGalleryFile.setId(counter);
-    		imageGalleryFile.setFileName(file.getOriginalFilename());
-	        imageGalleryFile.setFileSize(file.getSize());
-	        imageGalleryFile.setImageFormat(file.getContentType());
-	        imageGalleryFile.setUseFilenameAsDefault(useFilenameAsDefault);
-	        imageGalleryFile.setAltTag(altTag);
-	        imageGalleryFile.setCaption(caption);
-	        
-	        files.put(imageGalleryFile.getId(), imageGalleryFile);
-    	} else {
-    		//FIXME
-    	}
-    	
-    	return imageGalleryFile;
+		imageGalleryFile = new ImageGalleryFile();
+		counter++;
+		imageGalleryFile.setId(counter);
+		imageGalleryFile.setFileName(file.getOriginalFilename());
+        imageGalleryFile.setFileSize(file.getSize());
+        imageGalleryFile.setImageFormat(file.getContentType());
+        imageGalleryFile.setUseFilenameAsDefault(useFilenameAsDefault);
+        imageGalleryFile.setAltTag(altTag);
+        imageGalleryFile.setCaption(caption);
+        
+        imageGalleryFile = imageGalleryService.saveImageToCurrentUserGallery(imageGalleryFile);
+        return imageGalleryFile;
     }
     
 //    /***************************************************

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @Configuration
-@ComponentScan("uk.co.wowcher")
+@ComponentScan({"uk.co.wowcher", "uk.co.wowcher.service.impl"})
 @EnableWebMvc
 public class Config {
 

@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import uk.co.wowcher.config.Config;
 import uk.co.wowcher.config.WebInitializer;
 import uk.co.wowcher.config.WebMvcConfiguration;
 
@@ -25,7 +24,7 @@ import uk.co.wowcher.config.WebMvcConfiguration;
  * @author francesco.bianchi
  */
 @WebAppConfiguration
-@ContextConfiguration(classes = {Config.class, WebInitializer.class, WebMvcConfiguration.class})
+@ContextConfiguration(classes = {WebInitializer.class, WebMvcConfiguration.class})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ImageGalleryControllerTest {
 

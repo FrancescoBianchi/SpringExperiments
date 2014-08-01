@@ -36,14 +36,14 @@
             </div>
 
 			<div class="row well lead select-file-area-content">
-				<div class="col-md-5 select-file-area-component">
+				<div id="browse-file" class="col-md-5 select-file-area-component">
 					<span>You can search in your filesystem</span>
 					<input type="file" nv-file-select="" uploader="uploader" multiple />
 				</div>
-				<div class="col-md-2 select-file-area-component">
+				<div id="or-file-choosing-method-separator" class="col-md-2 select-file-area-component">
 					<span>or</span>
 				</div>
-				<div class="col-md-5 select-file-area-component"
+				<div id="drop-area" class="col-md-5 select-file-area-component"
 					ng-show="uploader.isHTML5">
 					<div class="drop-zone text-center" nv-file-over=""
 						uploader="uploader">

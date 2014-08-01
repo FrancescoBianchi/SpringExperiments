@@ -5,6 +5,7 @@
 <title>Image Gallery Uploader</title>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="app/css/bootstrap-wowcher.css" />
 <link rel="stylesheet" href="app/css/main.css" />
     
@@ -29,9 +30,10 @@
 
 		<div class="row select-file-area">
 
-
-			<h3>Select the image(s) that you want to add to your gallery</h3>
-			<span class="highlight">You can change the list of selected images before they are uploaded</span>
+            <div class="page-header">
+				<h2>Select the image(s) that you want to add to your gallery</h2>
+				<span class="highlight">You can change the list of selected images before they are uploaded</span>
+            </div>
 
 			<div class="row well lead select-file-area-content">
 				<div class="col-md-5 select-file-area-component">
@@ -54,7 +56,7 @@
 		<div id="uploaderQueueContainer" class="row" ng-show="uploader.queue.length > 0">
 			<div class="col-md-12">
 
-				<span class="h3">
+				<span class="h2">
 				   <span ng-show="uploader.getNotUploadedItems().length == 0">All files have been uploaded</span>
 				   <span ng-show="uploader.getNotUploadedItems().length > 0 && uploader.getNotUploadedItems().length < uploader.queue.length">You must still upload {{uploader.getNotUploadedItems().length}} out of {{ uploader.queue.length}} selected files</span>
 				   <span ng-show="uploader.getNotUploadedItems().length == uploader.queue.length">

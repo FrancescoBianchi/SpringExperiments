@@ -3,9 +3,9 @@ package uk.co.wowcher.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import uk.co.wowcher.exception.ApplicationException;
 import uk.co.wowcher.model.ImageGalleryFile;
 import uk.co.wowcher.service.ImageGalleryService;
 
@@ -28,11 +29,10 @@ public class ImageGalleryController {
     Long counter = 0L;
     
     @RequestMapping(value="/upload", method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    public @ResponseBody ImageGalleryFile upload(MultipartFile file,
+    public @ResponseBody ResponseEntity<?> upload(MultipartFile file,
     		@RequestParam(value = "useFilenameAsDefault") Boolean useFilenameAsDefault,
     		@RequestParam(value = "altTag") String altTag,
-    		@RequestParam(value = "caption") String caption,
-			HttpServletResponse response) {
+    		@RequestParam(value = "caption") String caption) {
     	ImageGalleryFile imageGalleryFile = null; 
     	
 		imageGalleryFile = new ImageGalleryFile();
@@ -45,8 +45,16 @@ public class ImageGalleryController {
         imageGalleryFile.setAltTag(altTag);
         imageGalleryFile.setCaption(caption);
         
-        imageGalleryFile = imageGalleryService.saveImageToCurrentUserGallery(imageGalleryFile);
-        return imageGalleryFile;
+        ResponseEntity<?> response = null;
+        try {
+        	imageGalleryFile = imageGalleryService.saveImageToCurrentUserGallery(imageGalleryFile);
+        	response = new ResponseEntity<ImageGalleryFile>(imageGalleryFile, HttpStatus.OK);
+        } catch (ApplicationException exception) {
+        	response = new ResponseEntity<String>(exception.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch (Exception exception) {
+        	response = new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+        }
+        return response;
     }
     
 //    /***************************************************

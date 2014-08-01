@@ -2,6 +2,7 @@ package uk.co.wowcher.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import uk.co.wowcher.exception.ApplicationException;
 import uk.co.wowcher.model.ImageGalleryFile;
 import uk.co.wowcher.service.ImageGalleryService;
 
@@ -10,7 +11,7 @@ public class ImageGalleryServiceMock implements ImageGalleryService {
 
 	static Long counter = 0L;
 	
-	public ImageGalleryFile saveImageToCurrentUserGallery(ImageGalleryFile file) {
+	public ImageGalleryFile saveImageToCurrentUserGallery(ImageGalleryFile file) throws ApplicationException {
 		file.setId(getNextSequence());
 		return file;
 	}

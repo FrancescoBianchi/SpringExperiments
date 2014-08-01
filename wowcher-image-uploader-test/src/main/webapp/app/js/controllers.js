@@ -5,7 +5,7 @@ angular
 	.controller('ImageGalleryController', ['$scope', 'FileUploader', function($scope, FileUploader) {
         var uploader = 
     	$scope.uploader = new FileUploader({
-            url: 'api/imageGallery/upload'
+            url: 'api/imageGallery/upload',
         });
         
         $scope.validationErrors = []; 
@@ -19,9 +19,10 @@ angular
             }
         });
 
-//        uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
-//            console.info('onWhenAddingFileFailed', item, filter, options);//FIXME
-//        };
+        uploader.onErrorItem = function(item, response, status, headers) {
+        	console.log("The following error occurred while uploading the file " + item.file.name);
+        	console.log(response);
+        };
         
         var initAlternativeNamesFields = function(imageItem) {
         	var fileNameWithExtension = imageItem.file.name;

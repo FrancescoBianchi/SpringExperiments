@@ -35,7 +35,7 @@
 
 			<div class="row well lead select-file-area-content">
 				<div class="col-md-5 select-file-area-component">
-					<span>You can search it in your filesystem</span>
+					<span>You can search in your filesystem</span>
 					<input type="file" nv-file-select="" uploader="uploader" multiple />
 				</div>
 				<div class="col-md-2 select-file-area-component">

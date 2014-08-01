@@ -16,7 +16,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
-<script src="lib/js/angular-file-upload/angular-file-upload.js"></script>
+<script src="resources/lib/js/angular-file-upload/angular-file-upload.js"></script>
 <script src="resources/app/js/controllers.js"></script>
 <script src="resources/app/js/directives.js"></script>
 

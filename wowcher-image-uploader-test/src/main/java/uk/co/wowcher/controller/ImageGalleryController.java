@@ -1,8 +1,5 @@
 package uk.co.wowcher.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,9 +27,7 @@ public class ImageGalleryController {
     		@RequestParam(value = "useFilenameAsDefault") Boolean useFilenameAsDefault,
     		@RequestParam(value = "altTag") String altTag,
     		@RequestParam(value = "caption") String caption) {
-    	ImageGalleryFile imageGalleryFile = null; 
-    	
-		imageGalleryFile = new ImageGalleryFile();
+    	ImageGalleryFile imageGalleryFile = new ImageGalleryFile();
 		imageGalleryFile.setFileName(file.getOriginalFilename());
         imageGalleryFile.setFileSize(file.getSize());
         imageGalleryFile.setImageFormat(file.getContentType());

@@ -4,7 +4,7 @@
 }
 
 .nv-file-over {
-    border: 3px dotted #666;
+    border: 3px dotted #ec008c;
 } /* Default class applied to drop zones on over */
 input[type=file] {
     bottom: 0px;
@@ -14,6 +14,10 @@ input[type=file] {
 .select-file-area .select-file-area-component {
     height: 100px;
     vertical-align: middle;
+}
+
+.select-file-area-content {
+	margin-top: 10px;
 }
 
 canvas {
@@ -47,4 +51,22 @@ html,body {
 
 #uploaderQueueContainer {
     margin-top: 40px;
+    margin-bottom: 40px
+}
+
+.highlight {
+	color: #ec008c;
+}
+
+h3, .h3 {
+	font-family: "Lobster13Regular";
+    src: url("/fonts/Lobster_1.3-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/Lobster_1.3-webfont.woff") format("woff"), url("/fonts/Lobster_1.3-webfont.ttf") format("truetype"), url("/fonts/Lobster_1.3-webfont.svg#Lobster13Regular") format("svg");
+}
+
+.progress-bar.success {
+	background-color: #ec008c;
+}
+
+.glyphicon-ok.success {
+	color: #ec008c;
 }

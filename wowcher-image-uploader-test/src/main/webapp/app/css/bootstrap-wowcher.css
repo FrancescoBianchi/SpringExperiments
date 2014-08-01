@@ -22,3 +22,34 @@
   background-color: #f2dede;
   border-color: #b94a48;
 }
+
+/**     BUTTONS COLORS  */
+.btn-default {
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eaeaea);
+    background-size: 100% auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #53ade9;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.btn-default:hover, .search-button:focus {
+    border-color: #767676;
+    cursor: pointer;
+    text-decoration: none;
+    color: #1b94e4;
+}
+
+.btn-primary {
+	background: linear-gradient(to bottom, #00b8fe 0px, #006ffd 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: 1px solid #449;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 1px 1px #444;
+}
+
+.btn-primary:hover, .search-primary:focus {
+    background: linear-gradient(to bottom, #006cfb 0px, #0055c5 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #006cfb;
+}

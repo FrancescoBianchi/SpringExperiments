@@ -31,11 +31,12 @@
 
 
 			<h3>Select the file(s) that you want to add to your gallery</h3>
+			<span class="highlight">You can change the list of selected files before they are uploaded</span>
 
-			<div class="row well lead">
+			<div class="row well lead select-file-area-content">
 				<div class="col-md-5 select-file-area-component">
-					<span>You can search it in your filesystem</span> <input
-						type="file" nv-file-select="" uploader="uploader" multiple />
+					<span>You can search it in your filesystem</span>
+					<input type="file" nv-file-select="" uploader="uploader" multiple />
 				</div>
 				<div class="col-md-2 select-file-area-component">
 					<span>or</span>
@@ -51,7 +52,7 @@
 		</div>
 
 		<div id="uploaderQueueContainer" class="row" ng-show="uploader.queue.length > 0">
-			<div class="col-md-12" style="margin-bottom: 40px">
+			<div class="col-md-12">
 
 				<span class="h3">
 				   <span ng-show="uploader.getNotUploadedItems().length == 0">All files have been uploaded</span>
@@ -144,7 +145,7 @@
 							</div>
 							
 							<div class="col-md-1 text-center">
-								<span ng-show="image.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+								<span ng-show="image.isSuccess"><i class="glyphicon glyphicon-ok success"></i></span>
                                 <span ng-show="image.isError"><i class="glyphicon glyphicon-remove"></i></span>
 							</div>
 							
@@ -155,7 +156,7 @@
 									ng-disabled="image.isReady || image.isUploading || image.isSuccess || form.$invalid">
 									<span class="glyphicon glyphicon-upload"></span> Upload
 								</button>
-								<button type="button" class="btn btn-danger btn-xs btn-block"
+								<button type="button" class="btn btn-default btn-xs btn-block"
 									ng-click="image.remove()" ng-disabled="image.isUploading">
 									<span class="glyphicon glyphicon-trash"></span> Remove
 								</button>
@@ -169,7 +170,7 @@
 							ng-disabled="!uploader.getNotUploadedItems().length || validationErrors.length > 0">
 							<span class="glyphicon glyphicon-upload"></span> Upload all
 						</button>
-						<button type="button" class="btn btn-danger btn-s"
+						<button type="button" class="btn btn-default btn-s"
 							ng-click="uploader.clearQueue()"
 							ng-disabled="!uploader.queue.length">
 							<span class="glyphicon glyphicon-trash"></span> Remove all

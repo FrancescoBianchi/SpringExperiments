@@ -24,7 +24,7 @@
 
 <body ng-controller="ImageGalleryController" nv-file-drop="" uploader="uploader" filters="imageFilter">
 
-	<div class="row select-file-area">
+	<div class="select-file-area">
 
         <div class="page-header">
             <div class="container">
@@ -36,7 +36,7 @@
 			</div>
         </div>
 
-		<div class="row lead select-file-area-content">
+		<div class="lead select-file-area-content">
             <div class="container standard-container">
 				<div id="browse-file" class="col-md-5 select-file-area-component">
 					<span>You can search in your filesystem</span>
@@ -56,9 +56,7 @@
 		</div>
 	</div>
 	
-	<div class="row">
-
-		<div id="uploaderQueueContainer" class="container standard-container">
+	<div id="uploaderQueueContainer" class="container standard-container">
 			<div class="col-md-12">
 
 				<span class="h2">
@@ -199,7 +197,6 @@
 
 			</div>
 		</div>
-	</div>
 
 </body>
 </html>

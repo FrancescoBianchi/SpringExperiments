@@ -24,16 +24,20 @@
 
 <body ng-controller="ImageGalleryController" nv-file-drop="" uploader="uploader" filters="imageFilter">
 
-	<div class="container">
+	<div class="row select-file-area">
 
-		<div class="row select-file-area">
+        <div class="page-header">
+            <div class="container">
+                <div class="col-sm-3 header-logo"></div>
+                <div class="col-sm-9">
+					<h2>Select the image(s) that you want to add to your gallery</h2>
+					<span class="highlight">You can change the list of selected images before they are uploaded</span>
+                </div>
+			</div>
+        </div>
 
-            <div class="page-header">
-				<h2>Select the image(s) that you want to add to your gallery</h2>
-				<span class="highlight">You can change the list of selected images before they are uploaded</span>
-            </div>
-
-			<div class="row well lead select-file-area-content">
+		<div class="row lead select-file-area-content">
+            <div class="container standard-container">
 				<div id="browse-file" class="col-md-5 select-file-area-component">
 					<span>You can search in your filesystem</span>
 					<input type="file" nv-file-select="" uploader="uploader" multiple />
@@ -50,8 +54,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	
+	<div class="row">
 
-		<div id="uploaderQueueContainer" class="row" ng-show="uploader.queue.length > 0">
+		<div id="uploaderQueueContainer" class="container standard-container" ng-show="uploader.queue.length > 0">
 			<div class="col-md-12">
 
 				<span class="h2">

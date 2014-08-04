@@ -52,11 +52,6 @@ html,body {
     border-bottom: 1px solid #c3c3c3;
 }
 
-#uploaderQueueContainer {
-    margin-top: 40px;
-    margin-bottom: 40px
-}
-
 .highlight {
 	color: #ec008c;
 }
@@ -65,15 +60,15 @@ html,body {
 	font-family: 'Lobster';
 }
 
-.page-header {
+.header-logo {
 	background: url("http://www.wowcher.co.uk/images/dod/new/wowcher-logo-v3-small.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-	background-position: right;
+	background-position: left;
 	height: 95px;
 	border: none;
 }
 
 .page-header h2, .h2 {
-	padding-top: 29px;
+	padding-top: 8px;
 }
 
 .progress-bar.success {
@@ -82,4 +77,23 @@ html,body {
 
 .glyphicon-ok.success {
 	color: #ec008c;
+}
+
+body {
+    background-image: url("http://www.wowcher.co.uk/images/dod/new/bg-tile.png");
+    background-repeat: repeat;	
+}
+
+.page-header {
+    background-color: #b5b5b5;
+    background-image: url("http://www.wowcher.co.uk/images/dod/new/bg-header2.png");
+    background-position: 0 2px;
+    margin-top: 0px;
+}
+
+.standard-container {
+	background-color: #fff;
+    box-shadow: 0 0 4px #bbb;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }

@@ -33,7 +33,7 @@
     color: #53ade9;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.btn-default:hover, .search-button:focus {
+.btn-default:hover, .btn-default:focus, .btn-default:active {
     border-color: #767676;
     cursor: pointer;
     text-decoration: none;
@@ -49,7 +49,7 @@
     text-shadow: 1px 1px #444;
 }
 
-.btn-primary:hover, .search-primary:focus {
+.btn-primary:hover, .btn-primary:focus {
     background: linear-gradient(to bottom, #006cfb 0px, #0055c5 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #006cfb;
 }

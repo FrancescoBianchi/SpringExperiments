@@ -187,6 +187,12 @@
 							title="Empty the list of files to be uploaded">
 							<span class="glyphicon glyphicon-trash"></span> Remove all
 						</button>
+                        <button type="button" class="btn btn-default btn-s"
+                            ng-click="removeUploadedFiles()"
+                            ng-disabled="(uploader.queue.length - uploader.getNotUploadedItems().length) == 0"
+                            title="Remove uploaded files from the list">
+                            <span class="glyphicon glyphicon-trash"></span> Remove uploaded
+                        </button>
 					</div>
 
 				</div>

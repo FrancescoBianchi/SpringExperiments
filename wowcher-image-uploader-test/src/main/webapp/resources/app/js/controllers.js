@@ -43,6 +43,15 @@ angular
         	}
         };
         
+        $scope.removeUploadedFiles = function() {
+        	var uploadedItems = $scope.uploader.queue.filter(function(item) {
+                return (item.isSuccess);
+            });
+    		angular.forEach(uploadedItems, function(item, key) {
+    			$scope.uploader.removeFromQueue(item);
+    		});
+        };
+        
         uploader.onBeforeUploadItem = function(imageItem) {
         	imageItem.formData.push({useFilenameAsDefault: imageItem.useFilenameAsDefault});
         	imageItem.formData.push({caption : imageItem.caption});

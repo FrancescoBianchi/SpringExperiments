@@ -58,19 +58,19 @@
 	
 	<div class="row">
 
-		<div id="uploaderQueueContainer" class="container standard-container" ng-show="uploader.queue.length > 0">
+		<div id="uploaderQueueContainer" class="container standard-container">
 			<div class="col-md-12">
 
 				<span class="h2">
-				   <span ng-show="uploader.getNotUploadedItems().length == 0">All files have been uploaded</span>
-				   <span ng-show="uploader.getNotUploadedItems().length > 0 && uploader.getNotUploadedItems().length < uploader.queue.length">You must still upload {{uploader.getNotUploadedItems().length}} out of {{ uploader.queue.length}} selected files</span>
+				   <span ng-show="uploader.getNotUploadedItems().length == 0">There are no files waiting to be uploaded</span>
+				   <span ng-show="uploader.getNotUploadedItems().length > 0 && uploader.getNotUploadedItems().length < uploader.queue.length">You have not uploaded {{uploader.getNotUploadedItems().length}} files out of {{ uploader.queue.length}} yet</span>
 				   <span ng-show="uploader.getNotUploadedItems().length == uploader.queue.length">
 				       <span ng-show="uploader.queue.length == 1">There is 1 file ready to be uploaded</span>
 				       <span ng-show="uploader.queue.length > 1">There are {{ uploader.queue.length}} files ready to be uploaded</span>
 			       </span>
 			    </span>
 
-				<div>
+				<div ng-show="uploader.queue.length > 0">
 					<div class="row text-center table-header lead">
 						<div class="col-sm-3"><span>Name</span></div>
 						<div class="col-sm-4"><span>Info</span></div>

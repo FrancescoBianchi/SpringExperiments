@@ -42,7 +42,7 @@
 					<span>You can search in your filesystem</span>
 					<input type="file" nv-file-select="" uploader="uploader" multiple />
 				</div>
-				<div id="or-file-choosing-method-separator" class="col-md-2 select-file-area-component">
+				<div id="or-file-choosing-method-separator" class="col-md-2 select-file-area-component" ng-show="uploader.isHTML5">
 					<span>or</span>
 				</div>
 				<div id="drop-area" class="col-md-5 select-file-area-component"
